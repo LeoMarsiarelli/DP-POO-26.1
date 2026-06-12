@@ -133,6 +133,10 @@ public class Main {
             return;
         }
         double altitudeKm = Double.parseDouble(entradaAltitude.trim().replace(",", "."));
+        if (altitudeKm <= 0) {
+            throw new IllegalArgumentException(
+                    "Altitude inválida: deve ser maior que zero (valor informado: " + altitudeKm + ").");
+        }
 
         String status = pedirStatusValido("Informe o status (operacional, manutenção ou desativado):");
         if (status == null) {
@@ -148,6 +152,10 @@ public class Main {
                     return;
                 }
                 double massaKg = Double.parseDouble(entradaMassa.trim().replace(",", "."));
+                if (massaKg <= 0) {
+                    throw new IllegalArgumentException(
+                            "Massa inválida: deve ser maior que zero (valor informado: " + massaKg + ").");
+                }
                 novo = new CubeSat(id, nome, altitudeKm, status, massaKg);
                 break;
             }
@@ -158,6 +166,10 @@ public class Main {
                     return;
                 }
                 double larguraBandaMbps = Double.parseDouble(entradaBanda.trim().replace(",", "."));
+                if (larguraBandaMbps <= 0) {
+                    throw new IllegalArgumentException(
+                            "Largura de banda inválida: deve ser maior que zero (valor informado: " + larguraBandaMbps + ").");
+                }
                 novo = new SateliteComunicacao(id, nome, altitudeKm, status, larguraBandaMbps);
                 break;
             }
@@ -168,6 +180,10 @@ public class Main {
                     return;
                 }
                 double resolucaoMetros = Double.parseDouble(entradaResolucao.trim().replace(",", "."));
+                if (resolucaoMetros <= 0) {
+                    throw new IllegalArgumentException(
+                            "Resolução inválida: deve ser maior que zero (valor informado: " + resolucaoMetros + ").");
+                }
                 novo = new SateliteObservacao(id, nome, altitudeKm, status, resolucaoMetros);
                 break;
             }
