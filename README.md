@@ -2,6 +2,8 @@
 
 Projeto da Global Solution 2026/1 — POO com Java e WEB.
 
+Leonardo Marsiarelli - 3SIR/DP POO - RM 555366
+
 ## Estrutura
 
 ```
@@ -15,19 +17,6 @@ src/br/com/fiap/pequisol/
 └── operacao/
     └── Operavel.java             # Interface (calcularConsumoEnergia)
 ```
-
-## Como compilar e executar
-
-A partir da raiz do projeto:
-
-```bash
-mkdir -p out
-javac -d out $(find src -name "*.java")
-java -cp out br.com.fiap.pequisol.app.Main
-```
-
-No IntelliJ / Eclipse / VS Code basta abrir a pasta `src` como source root e
-executar a classe `br.com.fiap.pequisol.app.Main`.
 
 ## Funcionalidades
 
